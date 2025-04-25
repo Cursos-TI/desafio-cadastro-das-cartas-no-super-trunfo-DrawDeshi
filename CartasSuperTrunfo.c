@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -12,6 +13,8 @@ int main() {
     float area1, area2;
     float pib1, pib2;
     int pontos_turisticos1, pontos_turisticos2;
+    float densidade1, densidade2;
+    float pibpc1, pibpc2;
     
     // Cadastro das Cartas:
     // Fazendo prompt das características da Carta 1
@@ -63,8 +66,15 @@ int main() {
 
     printf("Número de pontos turísticos: ");
     scanf("%i", &pontos_turisticos2);
+
+    //Calculando as variáveis de Densidade populacional e Pib per capita.
+    densidade1 = populacao1 / area1;
+    densidade2 = populacao2 / area2;
+
+    pibpc1 = (pib1 * 1000000000) / populacao1;
+    pibpc2 = (pib2 * 1000000000) / populacao2;
     
-    // Printando os valores da carta 1
+    // Printando os valores das cartas
 
     printf("\n"); // \n pra formatar o texto bonitinho
     printf("Carta 1\n\n");
@@ -75,9 +85,9 @@ int main() {
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de pontos turísticos: %d\n", pontos_turisticos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibpc1);
 
-    // Printando os valores da carta 2
-    
     printf("\n"); // \n pra formatar o texto bonitinho
     printf("Carta 2\n\n");
     printf("Estado: %c\n", estado2);
@@ -87,6 +97,8 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de pontos turísticos: %d\n", pontos_turisticos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibpc2);
     printf("\n"); // \n pra formatar bonito denovo
 
     return 0;
