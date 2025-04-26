@@ -9,7 +9,7 @@ int main() {
     char estado1, estado2;
     char codigo1[5], codigo2[5];
     char cidade1[20], cidade2[20];
-    int populacao1, populacao2;
+    unsigned long int populacao1, populacao2;
     float area1, area2;
     float pib1, pib2;
     int pontos_turisticos1, pontos_turisticos2;
@@ -100,6 +100,74 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: %.2f reais\n", pibpc2);
     printf("\n"); // \n pra formatar bonito denovo
+
+    // Registrar Vitórias
+    int vencedor = 0;
+
+    printf("--------------------\n\n");
+    printf("Comparação de Cartas\n");
+
+
+    //População
+    vencedor = populacao1 > populacao2;
+    if(vencedor > 0) {
+        printf("População: Carta 1 venceu (1)\n");
+    } else {
+        printf("População: Carta 2 venceu (0)\n");
+    }
+
+    //Área
+    vencedor = area1 > area2;
+    if(vencedor > 0) {
+        printf("Área: Carta 1 venceu (1)\n");
+    } else {
+        printf("Área: Carta 2 venceu (0)\n");
+    }
+
+    //PIB
+    vencedor = pib1 > pib2;
+    if(vencedor > 0) {
+        printf("PIB: Carta 1 venceu (1)\n");
+    } else {
+        printf("PIB: Carta 2 venceu (0)\n");
+    }
+
+    //Pontos turísticos
+    vencedor = pontos_turisticos1 > pontos_turisticos2;
+    if(vencedor > 0) {
+        printf("Pontos turísticos: Carta 1 venceu (1)\n");
+    } else {
+        printf("Pontos turísticos: Carta 2 venceu (0)\n");
+    }
+
+    //Densidade
+    vencedor = (1 / densidade1) < (1 / densidade2);
+    if(vencedor > 0) {
+        printf("Densidade Populacional: Carta 1 venceu (1)\n");
+    } else {
+        printf("Densidade Populacional: Carta 2 venceu (0)\n");
+    }
+
+    //PIB per capita
+    vencedor = pibpc1 > pibpc2;
+    if(vencedor > 0) {
+        printf("PIB per Capita: Carta 1 venceu (1)\n");
+    } else {
+        printf("PIB per Capita: Carta 2 venceu (0)\n");
+    }
+
+    unsigned long int superpoderA, superpoderB;
+
+    superpoderA = populacao1 + area1 + pib1 + pontos_turisticos1 + (1/densidade1) + pibpc1;
+    superpoderB = populacao2 + area2 + pib2 + pontos_turisticos2 + (1/densidade2) + pibpc2;
+
+    if(superpoderA > superpoderB) {
+        printf("Super Poder: Carta 1 venceu (1)\n");
+    } else {
+        printf("Super Poder: Carta 2 venceu (0)\n");
+    }
+
+    printf("\n");
 
     return 0;
 }
